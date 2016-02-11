@@ -1,0 +1,97 @@
+﻿<form kendo-validator="saveValidator" name="billForm">
+    <div class="container">
+        <div class="pull-left">
+            <a href="" ng-click="helperService.redirectTo('/main')"><< Back</a>
+        </div>
+        <div class="pull-right">
+            <button type="button" class="btn btn-primary" ng-click="saveBills()">Save Bill</button>
+        </div>
+    </div>
+    <br />
+    <div class="panel panel-info">
+        <div class="panel-heading"><strong>Summary</strong></div> <!-- End of Panel heading -->
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-4 col-xs-4">
+                    <div class="widget-title summary-title"><label>My Money</label></div>
+                    <div class="widget-value"><label>{{ remainingIncome | currency }}</label></div>
+                </div>
+                <div class="col-md-4 col-xs-4">
+                    <div class="widget-title summary-title"><label>Total Paid</label></div>
+                    <div class="widget-value"><label>{{ totalPaid | currency }}</label></div>
+                </div>
+                <div class="col-md-4 col-xs-4">
+                    <div class="widget-title summary-title"><label>Earnings</label></div>
+                    <div class="widget-value"><label>{{ earnings | currency }}</label></div>
+                </div>
+            </div>
+        </div><!-- End of body panel -->
+    </div><!-- End of summary panel -->
+
+    <div class="panel panel-warning">
+        <div class="panel-heading"><strong>Incomes</strong></div> <!-- End of Panel heading -->
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-4 col-xs-4">
+                    <div class="form-group {{ receivedAmountGroup }}">
+                        <label class="control-label" for="receivedAmount">Received Amount<span class="required"> *</span></label>
+                        <input type="number" min="0" name="Received Amount" id="receivedAmount" class="form-control" ng-model="receivedAmount" ng-blur="validate('receivedAmount')" ng-change="validate('receivedAmount')" aria-describedby="receivedAmountAria" required />
+
+                        <span id="receivedAmountAria" class="sr-only">{{ receivedAmountAria }}</span>
+                    </div>
+
+                    <div class="form-group {{ dateReceivedGroup }}">
+                        <label class="control-label" for="dateReceived">Date Received<span class="required">*</span></label><br />
+                        <input type="date" name="Date Received" id="dateReceived" class="form-control" kendo-date-picker k-ng-model="dateReceived" k-on-change="dateReceivedChange(kendoEvent)" aria-describedby="dateReceivedAria" required />
+                    
+                        <span id="dateReceivedAria" class="sr-only">{{ dateReceivedAria }}</span>
+                    </div>
+                </div>
+            </div><!--End of row -->
+        </div> <!-- End of panel body -->
+    </div><!-- End of summary panel -->
+  
+    <div class="form-group">
+        <label>Select Bill(s)</label>
+        <i ng-show="showBillOptionSpin" ng-hide="!showBillOptionSpin" class="fa fa-spinner fa-pulse"></i>
+        <isteven-multi-select helper-elements="" ng-show="!showBillOptionSpin" ng-hide="showBillOptionSpin" input-model="billOptions" output-model="selectedBills" button-label="name" item-label="id name" tick-property="ticked" on-item-click="onBillSelected(data)">
+        </isteven-multi-select>
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#addBillModal">Add Bill</button>
+    </div>
+
+    <div class="row">
+        <div id="billBox"></div>
+    </div> <!-- End of Bills -->
+</form>
+
+<div class="modal fade" id="addBillModal" tabindex="-1" role="dialog" aria-labelledby="addBillModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="addBillModalLabel">Add Bill</h4>
+            </div>
+            <div class="modal-body">
+                <form kendo-validator="addBillValidator">
+                    <div class="form-group">
+                        <label>Bill Name</label>
+                        <input type="text" ng-model="billName" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Estimated Amount</label>
+                        <input type="text" ng-model="estimatedAmount" ng-value="0" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Website Url</label>
+                        <input type="url" ng-model="websiteUrl" ng-value="0" class="form-control" />
+                    </div>
+                    <br />
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" ng-click="addBill()">Add Bill</button>
+            </div>
+        </div>
+    </div>
+</div>

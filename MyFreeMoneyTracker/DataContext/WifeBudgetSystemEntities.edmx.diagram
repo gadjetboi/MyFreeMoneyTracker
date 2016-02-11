@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3610cb1bc84d4e50a5f318d190fa9095" Name="Diagram1">
+        <EntityTypeShape EntityType="WifeBudgetSystemDbModel.Bill" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="WifeBudgetSystemDbModel.Budget" Width="1.5" PointX="0.75" PointY="5.125" />
+        <EntityTypeShape EntityType="WifeBudgetSystemDbModel.CustomBill" Width="1.5" PointX="0.75" PointY="7.875" />
+        <EntityTypeShape EntityType="WifeBudgetSystemDbModel.PaymentType" Width="1.5" PointX="0.75" PointY="1.5" />
+        <EntityTypeShape EntityType="WifeBudgetSystemDbModel.UserDetail" Width="1.5" PointX="2.75" PointY="4.75" />
+        <AssociationConnector Association="WifeBudgetSystemDbModel.FK_Bill_Budget" />
+        <AssociationConnector Association="WifeBudgetSystemDbModel.FK_Bill_CustomBill" />
+        <AssociationConnector Association="WifeBudgetSystemDbModel.FK_Bill_PaymentType" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

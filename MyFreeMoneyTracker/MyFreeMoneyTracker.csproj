@@ -1,0 +1,872 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1E261B77-B70C-4653-8AE8-C5686CC869ED}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WifeBudgetSystem</RootNamespace>
+    <AssemblyName>WifeBudgetSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <ApplicationInsightsResourceId>/subscriptions/c9026753-9d98-4eb9-aad6-70b517dca757/resourcegroups/Default/providers/microsoft.insights/components/myfreemoneytracker</ApplicationInsightsResourceId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Elmah, Version=1.2.13605.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\elmah.corelibrary.1.2\lib\Elmah.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Elmah.Mvc, Version=2.1.2.1389, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Elmah.Mvc.2.1.2\lib\net40\Elmah.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=1.0.0.4220, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.1.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights.Extensibility.DependencyCollector, Version=1.0.0.4227, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.1.0.0\lib\net45\Microsoft.ApplicationInsights.Extensibility.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector, Version=1.0.0.4231, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.1.0.0\lib\net45\Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights.Extensibility.Web, Version=1.0.0.4227, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.1.0.0\lib\net45\Microsoft.ApplicationInsights.Extensibility.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights.Web.TelemetryChannel, Version=1.0.0.4227, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.TelemetryChannel.1.0.0\lib\net45\Microsoft.ApplicationInsights.Web.TelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Diagnostics.Instrumentation.Extensions.Intercept, Version=0.17.0.194, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.0.17.0\lib\net45\Microsoft.Diagnostics.Instrumentation.Extensions.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SendGrid.SmtpApi, Version=1.3.1.0, Culture=neutral, PublicKeyToken=2ae73662c35d80e4, processorArchitecture=MSIL">
+      <HintPath>..\packages\SendGrid.SmtpApi.1.3.1\lib\net40\SendGrid.SmtpApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Api\AccountController.cs" />
+    <Compile Include="Controllers\Api\BudgetController.cs" />
+    <Compile Include="Controllers\Api\CustomBillController.cs" />
+    <Compile Include="Controllers\Api\PaymentTypeController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="DataContext\Bill.cs">
+      <DependentUpon>WifeBudgetSystemEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\Budget.cs">
+      <DependentUpon>WifeBudgetSystemEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\CustomBill.cs">
+      <DependentUpon>WifeBudgetSystemEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\PaymentType.cs">
+      <DependentUpon>WifeBudgetSystemEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\UserDetail.cs">
+      <DependentUpon>WifeBudgetSystemEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\WifeBudgetSystemEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WifeBudgetSystemEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\WifeBudgetSystemEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WifeBudgetSystemEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\WifeBudgetSystemEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WifeBudgetSystemEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataRepository\UserRepository.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountBindingModels.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\BillModel.cs" />
+    <Compile Include="Models\BudgetModel.cs" />
+    <Compile Include="Models\CustomBillModel.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\PaymentTypeModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\ApplicationOAuthProvider.cs" />
+    <Compile Include="Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Results\ChallengeResult.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App\App.js" />
+    <Content Include="App\Services\AccountService.js" />
+    <Content Include="App\Services\HelperService.js" />
+    <Content Include="App\ViewModels\BudgetDetailViewModel.js" />
+    <Content Include="App\ViewModels\ConfirmEmailViewModel.js" />
+    <Content Include="App\ViewModels\IndexViewModel.js" />
+    <Content Include="App\ViewModels\LoginViewModel.js" />
+    <Content Include="App\ViewModels\MainViewModel.js" />
+    <Content Include="App\ViewModels\ResetPasswordViewModel.js" />
+    <Content Include="App\Views\BudgetDetailView.html" />
+    <Content Include="App\Views\ConfirmEmailView.html" />
+    <Content Include="App\Views\LoginView.html" />
+    <Content Include="App\Views\MainView.html" />
+    <Content Include="App\Views\ResetPasswordView.html" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bower_components\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\bower_components\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\bower_components\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\bower_components\font-awesome\HELP-US-OUT.txt" />
+    <Content Include="Content\Default\sprite.png" />
+    <Content Include="Content\images\icons\android-chrome-144x144.png" />
+    <Content Include="Content\images\icons\android-chrome-192x192.png" />
+    <Content Include="Content\images\icons\android-chrome-36x36.png" />
+    <Content Include="Content\images\icons\android-chrome-48x48.png" />
+    <Content Include="Content\images\icons\android-chrome-72x72.png" />
+    <Content Include="Content\images\icons\android-chrome-96x96.png" />
+    <Content Include="Content\images\icons\apple-touch-icon-114x114.png" />
+    <Content Include="Content\images\icons\apple-touch-icon-120x120.png" />
+    <Content Include="Content\images\icons\apple-touch-icon-144x144.png" />
+    <Content Include="Content\images\icons\apple-touch-icon-152x152.png" />
+    <Content Include="Content\images\icons\apple-touch-icon-180x180.png" />
+    <Content Include="Content\images\icons\apple-touch-icon-57x57.png" />
+    <Content Include="Content\images\icons\apple-touch-icon-60x60.png" />
+    <Content Include="Content\images\icons\apple-touch-icon-72x72.png" />
+    <Content Include="Content\images\icons\apple-touch-icon-76x76.png" />
+    <Content Include="Content\images\icons\apple-touch-icon-precomposed.png" />
+    <Content Include="Content\images\icons\apple-touch-icon.png" />
+    <Content Include="Content\images\icons\browserconfig.xml" />
+    <Content Include="Content\images\icons\favicon-16x16.png" />
+    <Content Include="Content\images\icons\favicon-32x32.png" />
+    <Content Include="Content\images\icons\favicon-96x96.png" />
+    <Content Include="Content\images\icons\favicon.ico" />
+    <Content Include="Content\images\icons\mstile-144x144.png" />
+    <Content Include="Content\images\icons\mstile-150x150.png" />
+    <Content Include="Content\images\icons\mstile-310x150.png" />
+    <Content Include="Content\images\icons\mstile-310x310.png" />
+    <Content Include="Content\images\icons\mstile-70x70.png" />
+    <Content Include="Content\images\icons\safari-pinned-tab.svg" />
+    <Content Include="Content\loginForms\css\style.css" />
+    <Content Include="Content\loginForms\images\bg-7.jpg" />
+    <Content Include="Content\loginForms\images\bg10.jpg" />
+    <Content Include="Content\loginForms\images\bg8.jpg" />
+    <Content Include="Content\loginForms\images\bg9.jpg" />
+    <Content Include="Content\loginForms\images\bright.png" />
+    <Content Include="Content\loginForms\images\crossed.png" />
+    <Content Include="Content\loginForms\images\dark.png" />
+    <Content Include="Content\loginForms\images\icon10.png" />
+    <Content Include="Content\loginForms\images\icon3.png" />
+    <Content Include="Content\loginForms\images\icon6.png" />
+    <Content Include="Content\loginForms\images\icon9.png" />
+    <Content Include="Content\loginForms\images\icons.png" />
+    <Content Include="Content\loginForms\images\icons2.png" />
+    <Content Include="Content\loginForms\images\icons5.png" />
+    <Content Include="Content\loginForms\images\old.png" />
+    <Content Include="Content\loginForms\images\pool.png" />
+    <Content Include="Content\loginForms\images\red.jpg" />
+    <Content Include="Content\loginForms\images\star.png" />
+    <Content Include="Content\loginForms\images\tip1.png" />
+    <Content Include="Content\loginForms\images\tips.png" />
+    <Content Include="Content\loginForms\images\twit.png" />
+    <Content Include="Content\loginForms\images\xv.png" />
+    <Content Include="Content\toggle.css" />
+    <Content Include="DatabaseSchema\MyFreeMoneyTrackerDb.sql" />
+    <Content Include="DataContext\WifeBudgetSystemEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WifeBudgetSystemEntities.edmx</DependentUpon>
+      <LastGenOutput>WifeBudgetSystemEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DataContext\WifeBudgetSystemEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WifeBudgetSystemEntities.edmx</DependentUpon>
+      <LastGenOutput>WifeBudgetSystemEntities.cs</LastGenOutput>
+    </Content>
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bower_components\angular-bootstrap\index.js" />
+    <Content Include="Scripts\bower_components\angular-bootstrap\ui-bootstrap-csp.css" />
+    <Content Include="Scripts\bower_components\angular-bootstrap\ui-bootstrap-tpls.js" />
+    <Content Include="Scripts\bower_components\angular-bootstrap\ui-bootstrap-tpls.min.js" />
+    <Content Include="Scripts\bower_components\angular-bootstrap\ui-bootstrap.js" />
+    <Content Include="Scripts\bower_components\angular-bootstrap\ui-bootstrap.min.js" />
+    <Content Include="Scripts\bower_components\angular-local-storage\demo\demo-app.js" />
+    <Content Include="Scripts\bower_components\angular-local-storage\demo\demo-style.css" />
+    <Content Include="Scripts\bower_components\angular-local-storage\demo\demo.html" />
+    <Content Include="Scripts\bower_components\angular-local-storage\dist\angular-local-storage.js" />
+    <Content Include="Scripts\bower_components\angular-local-storage\dist\angular-local-storage.min.js" />
+    <Content Include="Scripts\bower_components\angular-route\angular-route.js" />
+    <Content Include="Scripts\bower_components\angular-route\angular-route.min.js" />
+    <Content Include="Scripts\bower_components\angular-route\index.js" />
+    <Content Include="Scripts\bower_components\angular-sanitize\angular-sanitize.js" />
+    <Content Include="Scripts\bower_components\angular-sanitize\angular-sanitize.min.js" />
+    <Content Include="Scripts\bower_components\angular-sanitize\index.js" />
+    <Content Include="Scripts\bower_components\angular-smart-table\dist\smart-table.js" />
+    <Content Include="Scripts\bower_components\angular-smart-table\dist\smart-table.min.js" />
+    <Content Include="Scripts\bower_components\angular-smart-table\gulpFile.js" />
+    <Content Include="Scripts\bower_components\angular-smart-table\index.js" />
+    <Content Include="Scripts\bower_components\angular-smart-table\src\bottom.txt" />
+    <Content Include="Scripts\bower_components\angular-smart-table\src\smart-table.module.js" />
+    <Content Include="Scripts\bower_components\angular-smart-table\src\stConfig.js" />
+    <Content Include="Scripts\bower_components\angular-smart-table\src\stPagination.js" />
+    <Content Include="Scripts\bower_components\angular-smart-table\src\stPipe.js" />
+    <Content Include="Scripts\bower_components\angular-smart-table\src\stSearch.js" />
+    <Content Include="Scripts\bower_components\angular-smart-table\src\stSelectRow.js" />
+    <Content Include="Scripts\bower_components\angular-smart-table\src\stSort.js" />
+    <Content Include="Scripts\bower_components\angular-smart-table\src\stTable.js" />
+    <Content Include="Scripts\bower_components\angular-smart-table\src\top.txt" />
+    <Content Include="Scripts\bower_components\angular-ui-switch\angular-ui-switch.css" />
+    <Content Include="Scripts\bower_components\angular-ui-switch\angular-ui-switch.js" />
+    <Content Include="Scripts\bower_components\angular-ui-switch\angular-ui-switch.min.css" />
+    <Content Include="Scripts\bower_components\angular-ui-switch\angular-ui-switch.min.js" />
+    <Content Include="Scripts\bower_components\angular-ui-switch\example\app.js" />
+    <Content Include="Scripts\bower_components\angular-ui-switch\example\index.html" />
+    <Content Include="Scripts\bower_components\angular-ui-switch\logo.png" />
+    <Content Include="Scripts\bower_components\angular\angular-csp.css" />
+    <Content Include="Scripts\bower_components\angular\angular.js" />
+    <Content Include="Scripts\bower_components\angular\angular.min.js" />
+    <Content Include="Scripts\bower_components\angular\index.js" />
+    <Content Include="Scripts\bower_components\angular-smart-table\.bower.json" />
+    <Content Include="Scripts\bower_components\angular-smart-table\.gitignore" />
+    <Content Include="Scripts\bower_components\angular-smart-table\.travis.yml" />
+    <Content Include="Scripts\bower_components\angular-smart-table\bower.json" />
+    <Content Include="Scripts\bower_components\angular-smart-table\changeLog.md" />
+    <Content Include="Scripts\bower_components\angular-smart-table\dist\smart-table.min.js.map" />
+    <Content Include="Scripts\bower_components\angular-smart-table\package.json" />
+    <Content Include="Scripts\bower_components\angular-smart-table\readme.md" />
+    <Content Include="Scripts\bower_components\angular\.bower.json" />
+    <Content Include="Scripts\bower_components\angular\angular.min.js.gzip" />
+    <Content Include="Scripts\bower_components\angular\angular.min.js.map" />
+    <Content Include="Scripts\bower_components\angular\bower.json" />
+    <Content Include="Scripts\bower_components\angular\package.json" />
+    <Content Include="Scripts\bower_components\angular\README.md" />
+    <Content Include="Scripts\bower_components\angular-route\.bower.json" />
+    <Content Include="Scripts\bower_components\angular-route\angular-route.min.js.map" />
+    <Content Include="Scripts\bower_components\angular-route\bower.json" />
+    <Content Include="Scripts\bower_components\angular-route\package.json" />
+    <Content Include="Scripts\bower_components\angular-route\README.md" />
+    <Content Include="Scripts\bower_components\bootstrap\dist\css\bootstrap-theme.css" />
+    <Content Include="Scripts\bower_components\bootstrap\dist\css\bootstrap-theme.min.css" />
+    <Content Include="Scripts\bower_components\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="Scripts\bower_components\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="Scripts\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\bower_components\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="Scripts\bower_components\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="Scripts\bower_components\bootstrap\dist\js\npm.js" />
+    <Content Include="Scripts\bower_components\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\bower_components\bootstrap\Gruntfile.js" />
+    <Content Include="Scripts\bower_components\bootstrap\grunt\bs-commonjs-generator.js" />
+    <Content Include="Scripts\bower_components\bootstrap\grunt\bs-glyphicons-data-generator.js" />
+    <Content Include="Scripts\bower_components\bootstrap\grunt\bs-lessdoc-parser.js" />
+    <Content Include="Scripts\bower_components\bootstrap\grunt\bs-raw-files-generator.js" />
+    <Content Include="Scripts\bower_components\bootstrap\js\affix.js" />
+    <Content Include="Scripts\bower_components\bootstrap\js\alert.js" />
+    <Content Include="Scripts\bower_components\bootstrap\js\button.js" />
+    <Content Include="Scripts\bower_components\bootstrap\js\carousel.js" />
+    <Content Include="Scripts\bower_components\bootstrap\js\collapse.js" />
+    <Content Include="Scripts\bower_components\bootstrap\js\dropdown.js" />
+    <Content Include="Scripts\bower_components\bootstrap\js\modal.js" />
+    <Content Include="Scripts\bower_components\bootstrap\js\popover.js" />
+    <Content Include="Scripts\bower_components\bootstrap\js\scrollspy.js" />
+    <Content Include="Scripts\bower_components\bootstrap\js\tab.js" />
+    <Content Include="Scripts\bower_components\bootstrap\js\tooltip.js" />
+    <Content Include="Scripts\bower_components\bootstrap\js\transition.js" />
+    <Content Include="Scripts\bower_components\bootstrap\package.js" />
+    <Content Include="Scripts\bower_components\isteven-angular-multiselect\.bower.json" />
+    <Content Include="Scripts\bower_components\isteven-angular-multiselect\.npmignore" />
+    <Content Include="Scripts\bower_components\isteven-angular-multiselect\bower.json" />
+    <Content Include="Scripts\bower_components\angular-bootstrap\.bower.json" />
+    <Content Include="Scripts\bower_components\angular-bootstrap\.gitignore" />
+    <Content Include="Scripts\bower_components\angular-bootstrap\.npmignore" />
+    <Content Include="Scripts\bower_components\angular-bootstrap\bower.json" />
+    <Content Include="Scripts\bower_components\angular-bootstrap\package.json" />
+    <Content Include="Scripts\bower_components\angular-bootstrap\README.md" />
+    <Content Include="Scripts\bower_components\bootstrap\.bower.json" />
+    <Content Include="Scripts\bower_components\bootstrap\bower.json" />
+    <Content Include="Scripts\bower_components\bootstrap\CHANGELOG.md" />
+    <Content Include="Scripts\bower_components\bootstrap\dist\css\bootstrap-theme.css.map" />
+    <Content Include="Scripts\bower_components\bootstrap\dist\css\bootstrap-theme.min.css.map" />
+    <Content Include="Scripts\bower_components\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="Scripts\bower_components\bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Include="Scripts\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Scripts\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Scripts\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Scripts\bower_components\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\bower_components\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Scripts\bower_components\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Scripts\bower_components\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Scripts\bower_components\bootstrap\grunt\.jshintrc" />
+    <Content Include="Scripts\bower_components\bootstrap\grunt\configBridge.json" />
+    <Content Include="Scripts\bower_components\bootstrap\grunt\sauce_browsers.yml" />
+    <Content Include="Scripts\bower_components\bootstrap\js\.jscsrc" />
+    <Content Include="Scripts\bower_components\bootstrap\js\.jshintrc" />
+    <Content Include="Scripts\bower_components\bootstrap\less\.csscomb.json" />
+    <Content Include="Scripts\bower_components\bootstrap\less\.csslintrc" />
+    <Content Include="Scripts\bower_components\bootstrap\less\alerts.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\badges.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\bootstrap.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\breadcrumbs.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\button-groups.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\buttons.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\carousel.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\close.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\code.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\component-animations.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\dropdowns.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\forms.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\glyphicons.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\grid.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\input-groups.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\jumbotron.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\labels.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\list-group.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\media.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\mixins.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\mixins\alerts.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\mixins\background-variant.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\mixins\border-radius.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\mixins\buttons.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\mixins\center-block.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\mixins\clearfix.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\mixins\forms.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\mixins\gradients.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\mixins\grid-framework.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\mixins\grid.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\mixins\hide-text.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\mixins\image.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\mixins\labels.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\mixins\list-group.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\mixins\nav-divider.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\mixins\nav-vertical-align.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\mixins\opacity.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\mixins\pagination.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\mixins\panels.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\mixins\progress-bar.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\mixins\reset-filter.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\mixins\reset-text.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\mixins\resize.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\mixins\responsive-visibility.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\mixins\size.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\mixins\tab-focus.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\mixins\table-row.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\mixins\text-emphasis.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\mixins\text-overflow.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\mixins\vendor-prefixes.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\modals.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\navbar.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\navs.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\normalize.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\pager.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\pagination.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\panels.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\popovers.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\print.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\progress-bars.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\responsive-embed.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\responsive-utilities.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\scaffolding.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\tables.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\theme.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\thumbnails.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\tooltip.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\type.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\utilities.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\variables.less" />
+    <Content Include="Scripts\bower_components\bootstrap\less\wells.less" />
+    <Content Include="Scripts\bower_components\bootstrap\LICENSE" />
+    <Content Include="Scripts\bower_components\bootstrap\nuget\bootstrap.less.nuspec" />
+    <Content Include="Scripts\bower_components\bootstrap\nuget\bootstrap.nuspec" />
+    <Content Include="Scripts\bower_components\bootstrap\nuget\MyGet.ps1" />
+    <Content Include="Scripts\bower_components\bootstrap\package.json" />
+    <Content Include="Scripts\bower_components\bootstrap\README.md" />
+    <EntityDeploy Include="DataContext\WifeBudgetSystemEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>WifeBudgetSystemEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DataContext\WifeBudgetSystemEntities.edmx.diagram">
+      <DependentUpon>WifeBudgetSystemEntities.edmx</DependentUpon>
+    </Content>
+    <Content Include="Content\bower_components\font-awesome\.bower.json" />
+    <Content Include="Content\bower_components\font-awesome\.gitignore" />
+    <Content Include="Content\bower_components\font-awesome\.npmignore" />
+    <Content Include="Content\bower_components\font-awesome\bower.json" />
+    <Content Include="Content\bower_components\font-awesome\css\font-awesome.css.map" />
+    <Content Include="Content\bower_components\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\bower_components\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\bower_components\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\bower_components\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\bower_components\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\bower_components\font-awesome\less\animated.less" />
+    <Content Include="Content\bower_components\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Content\bower_components\font-awesome\less\core.less" />
+    <Content Include="Content\bower_components\font-awesome\less\fixed-width.less" />
+    <Content Include="Content\bower_components\font-awesome\less\font-awesome.less" />
+    <Content Include="Content\bower_components\font-awesome\less\icons.less" />
+    <Content Include="Content\bower_components\font-awesome\less\larger.less" />
+    <Content Include="Content\bower_components\font-awesome\less\list.less" />
+    <Content Include="Content\bower_components\font-awesome\less\mixins.less" />
+    <Content Include="Content\bower_components\font-awesome\less\path.less" />
+    <Content Include="Content\bower_components\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Content\bower_components\font-awesome\less\stacked.less" />
+    <Content Include="Content\bower_components\font-awesome\less\variables.less" />
+    <Content Include="Content\bower_components\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Content\bower_components\font-awesome\scss\_animated.scss" />
+    <Content Include="Content\bower_components\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Content\bower_components\font-awesome\scss\_core.scss" />
+    <Content Include="Content\bower_components\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Content\bower_components\font-awesome\scss\_icons.scss" />
+    <Content Include="Content\bower_components\font-awesome\scss\_larger.scss" />
+    <Content Include="Content\bower_components\font-awesome\scss\_list.scss" />
+    <Content Include="Content\bower_components\font-awesome\scss\_mixins.scss" />
+    <Content Include="Content\bower_components\font-awesome\scss\_path.scss" />
+    <Content Include="Content\bower_components\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Content\bower_components\font-awesome\scss\_stacked.scss" />
+    <Content Include="Content\bower_components\font-awesome\scss\_variables.scss" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="Content\images\icons\manifest.json" />
+    <Content Include="ApplicationInsights.config" />
+    <None Include="Properties\PublishProfiles\LocalPublish.pubxml" />
+    <Content Include="Scripts\bower_components\angular-ui-switch\.bower.json" />
+    <Content Include="Scripts\bower_components\angular-ui-switch\bower.json" />
+    <Content Include="Scripts\bower_components\angular-ui-switch\Makefile" />
+    <Content Include="Scripts\bower_components\angular-ui-switch\package.json" />
+    <Content Include="Scripts\bower_components\angular-ui-switch\README.md" />
+    <Content Include="Scripts\bower_components\jquery\.bower.json" />
+    <Content Include="Scripts\bower_components\jquery\bower.json" />
+    <Content Include="Scripts\bower_components\jquery\dist\jquery.min.map" />
+    <Content Include="Scripts\bower_components\jquery\README.md" />
+    <Content Include="Scripts\bower_components\jquery\src\.jshintrc" />
+    <Content Include="Scripts\bower_components\angular-local-storage\.bower.json" />
+    <Content Include="Scripts\bower_components\angular-local-storage\.bowerrc" />
+    <Content Include="Scripts\bower_components\angular-local-storage\.gitattributes" />
+    <Content Include="Scripts\bower_components\angular-local-storage\.gitignore" />
+    <Content Include="Scripts\bower_components\angular-local-storage\.travis.yml" />
+    <Content Include="Scripts\bower_components\angular-local-storage\bower.json" />
+    <Content Include="Scripts\bower_components\angular-local-storage\CHANGELOG.md" />
+    <Content Include="Scripts\bower_components\angular-local-storage\LICENSE" />
+    <Content Include="Scripts\bower_components\angular-local-storage\package.json" />
+    <Content Include="Scripts\bower_components\angular-local-storage\README.md" />
+    <None Include="Properties\PublishProfiles\myfreemoneytracker.pubxml" />
+    <None Include="Properties\PublishProfiles\SomeePublish.pubxml" />
+    <Content Include="Scripts\bower_components\angular-sanitize\.bower.json" />
+    <Content Include="Scripts\bower_components\angular-sanitize\angular-sanitize.min.js.map" />
+    <Content Include="Scripts\bower_components\angular-sanitize\bower.json" />
+    <Content Include="Scripts\bower_components\angular-sanitize\package.json" />
+    <Content Include="Scripts\bower_components\angular-sanitize\README.md" />
+    <Content Include="Scripts\bower_components\ng-notify\.bower.json" />
+    <Content Include="Scripts\bower_components\ng-notify\bower.json" />
+    <Content Include="Scripts\bower_components\ng-notify\CHANGELOG.md" />
+    <Content Include="Scripts\bower_components\ng-notify\CONTRIBUTORS.md" />
+    <Content Include="Scripts\bower_components\ng-notify\dist\ng-notify.min.js.map" />
+    <Content Include="Scripts\bower_components\ng-notify\LICENSE" />
+    <Content Include="Scripts\bower_components\ng-notify\README.md" />
+    <Content Include="Scripts\bower_components\ng-notify\src\styles\ng-notify.css.map" />
+    <Content Include="Scripts\bower_components\ng-notify\src\styles\ng-notify.sass" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\bower_components\isteven-angular-multiselect\isteven-multi-select.css" />
+    <Content Include="Scripts\bower_components\isteven-angular-multiselect\isteven-multi-select.js" />
+    <Content Include="Scripts\bower_components\isteven-angular-multiselect\LICENSE.txt" />
+    <Content Include="Scripts\bower_components\jquery\AUTHORS.txt" />
+    <Content Include="Scripts\bower_components\jquery\dist\jquery.js" />
+    <Content Include="Scripts\bower_components\jquery\dist\jquery.min.js" />
+    <Content Include="Scripts\bower_components\jquery\LICENSE.txt" />
+    <Content Include="Scripts\bower_components\jquery\src\ajax.js" />
+    <Content Include="Scripts\bower_components\jquery\src\ajax\jsonp.js" />
+    <Content Include="Scripts\bower_components\jquery\src\ajax\load.js" />
+    <Content Include="Scripts\bower_components\jquery\src\ajax\parseJSON.js" />
+    <Content Include="Scripts\bower_components\jquery\src\ajax\parseXML.js" />
+    <Content Include="Scripts\bower_components\jquery\src\ajax\script.js" />
+    <Content Include="Scripts\bower_components\jquery\src\ajax\var\location.js" />
+    <Content Include="Scripts\bower_components\jquery\src\ajax\var\nonce.js" />
+    <Content Include="Scripts\bower_components\jquery\src\ajax\var\rquery.js" />
+    <Content Include="Scripts\bower_components\jquery\src\ajax\xhr.js" />
+    <Content Include="Scripts\bower_components\jquery\src\attributes.js" />
+    <Content Include="Scripts\bower_components\jquery\src\attributes\attr.js" />
+    <Content Include="Scripts\bower_components\jquery\src\attributes\classes.js" />
+    <Content Include="Scripts\bower_components\jquery\src\attributes\prop.js" />
+    <Content Include="Scripts\bower_components\jquery\src\attributes\support.js" />
+    <Content Include="Scripts\bower_components\jquery\src\attributes\val.js" />
+    <Content Include="Scripts\bower_components\jquery\src\callbacks.js" />
+    <Content Include="Scripts\bower_components\jquery\src\core.js" />
+    <Content Include="Scripts\bower_components\jquery\src\core\access.js" />
+    <Content Include="Scripts\bower_components\jquery\src\core\init.js" />
+    <Content Include="Scripts\bower_components\jquery\src\core\parseHTML.js" />
+    <Content Include="Scripts\bower_components\jquery\src\core\ready.js" />
+    <Content Include="Scripts\bower_components\jquery\src\core\support.js" />
+    <Content Include="Scripts\bower_components\jquery\src\core\var\rsingleTag.js" />
+    <Content Include="Scripts\bower_components\jquery\src\css.js" />
+    <Content Include="Scripts\bower_components\jquery\src\css\addGetHookIf.js" />
+    <Content Include="Scripts\bower_components\jquery\src\css\adjustCSS.js" />
+    <Content Include="Scripts\bower_components\jquery\src\css\curCSS.js" />
+    <Content Include="Scripts\bower_components\jquery\src\css\defaultDisplay.js" />
+    <Content Include="Scripts\bower_components\jquery\src\css\hiddenVisibleSelectors.js" />
+    <Content Include="Scripts\bower_components\jquery\src\css\showHide.js" />
+    <Content Include="Scripts\bower_components\jquery\src\css\support.js" />
+    <Content Include="Scripts\bower_components\jquery\src\css\var\cssExpand.js" />
+    <Content Include="Scripts\bower_components\jquery\src\css\var\getStyles.js" />
+    <Content Include="Scripts\bower_components\jquery\src\css\var\isHidden.js" />
+    <Content Include="Scripts\bower_components\jquery\src\css\var\rmargin.js" />
+    <Content Include="Scripts\bower_components\jquery\src\css\var\rnumnonpx.js" />
+    <Content Include="Scripts\bower_components\jquery\src\css\var\swap.js" />
+    <Content Include="Scripts\bower_components\jquery\src\data.js" />
+    <Content Include="Scripts\bower_components\jquery\src\data\accepts.js" />
+    <Content Include="Scripts\bower_components\jquery\src\data\Data.js" />
+    <Content Include="Scripts\bower_components\jquery\src\data\support.js" />
+    <Content Include="Scripts\bower_components\jquery\src\data\var\acceptData.js" />
+    <Content Include="Scripts\bower_components\jquery\src\data\var\dataPriv.js" />
+    <Content Include="Scripts\bower_components\jquery\src\data\var\dataUser.js" />
+    <Content Include="Scripts\bower_components\jquery\src\deferred.js" />
+    <Content Include="Scripts\bower_components\jquery\src\deprecated.js" />
+    <Content Include="Scripts\bower_components\jquery\src\dimensions.js" />
+    <Content Include="Scripts\bower_components\jquery\src\effects.js" />
+    <Content Include="Scripts\bower_components\jquery\src\effects\animatedSelector.js" />
+    <Content Include="Scripts\bower_components\jquery\src\effects\support.js" />
+    <Content Include="Scripts\bower_components\jquery\src\effects\Tween.js" />
+    <Content Include="Scripts\bower_components\jquery\src\event.js" />
+    <Content Include="Scripts\bower_components\jquery\src\event\ajax.js" />
+    <Content Include="Scripts\bower_components\jquery\src\event\alias.js" />
+    <Content Include="Scripts\bower_components\jquery\src\event\focusin.js" />
+    <Content Include="Scripts\bower_components\jquery\src\event\support.js" />
+    <Content Include="Scripts\bower_components\jquery\src\event\trigger.js" />
+    <Content Include="Scripts\bower_components\jquery\src\exports\amd.js" />
+    <Content Include="Scripts\bower_components\jquery\src\exports\global.js" />
+    <Content Include="Scripts\bower_components\jquery\src\intro.js" />
+    <Content Include="Scripts\bower_components\jquery\src\jquery.js" />
+    <Content Include="Scripts\bower_components\jquery\src\manipulation.js" />
+    <Content Include="Scripts\bower_components\jquery\src\manipulation\buildFragment.js" />
+    <Content Include="Scripts\bower_components\jquery\src\manipulation\createSafeFragment.js" />
+    <Content Include="Scripts\bower_components\jquery\src\manipulation\getAll.js" />
+    <Content Include="Scripts\bower_components\jquery\src\manipulation\setGlobalEval.js" />
+    <Content Include="Scripts\bower_components\jquery\src\manipulation\support.js" />
+    <Content Include="Scripts\bower_components\jquery\src\manipulation\var\nodeNames.js" />
+    <Content Include="Scripts\bower_components\jquery\src\manipulation\var\rcheckableType.js" />
+    <Content Include="Scripts\bower_components\jquery\src\manipulation\var\rleadingWhitespace.js" />
+    <Content Include="Scripts\bower_components\jquery\src\manipulation\var\rscriptType.js" />
+    <Content Include="Scripts\bower_components\jquery\src\manipulation\var\rtagName.js" />
+    <Content Include="Scripts\bower_components\jquery\src\manipulation\wrapMap.js" />
+    <Content Include="Scripts\bower_components\jquery\src\manipulation\_evalUrl.js" />
+    <Content Include="Scripts\bower_components\jquery\src\offset.js" />
+    <Content Include="Scripts\bower_components\jquery\src\outro.js" />
+    <Content Include="Scripts\bower_components\jquery\src\queue.js" />
+    <Content Include="Scripts\bower_components\jquery\src\queue\delay.js" />
+    <Content Include="Scripts\bower_components\jquery\src\selector-native.js" />
+    <Content Include="Scripts\bower_components\jquery\src\selector-sizzle.js" />
+    <Content Include="Scripts\bower_components\jquery\src\selector.js" />
+    <Content Include="Scripts\bower_components\jquery\src\serialize.js" />
+    <Content Include="Scripts\bower_components\jquery\src\support.js" />
+    <Content Include="Scripts\bower_components\jquery\src\traversing.js" />
+    <Content Include="Scripts\bower_components\jquery\src\traversing\findFilter.js" />
+    <Content Include="Scripts\bower_components\jquery\src\traversing\var\dir.js" />
+    <Content Include="Scripts\bower_components\jquery\src\traversing\var\rneedsContext.js" />
+    <Content Include="Scripts\bower_components\jquery\src\traversing\var\siblings.js" />
+    <Content Include="Scripts\bower_components\jquery\src\var\arr.js" />
+    <Content Include="Scripts\bower_components\jquery\src\var\class2type.js" />
+    <Content Include="Scripts\bower_components\jquery\src\var\concat.js" />
+    <Content Include="Scripts\bower_components\jquery\src\var\deletedIds.js" />
+    <Content Include="Scripts\bower_components\jquery\src\var\document.js" />
+    <Content Include="Scripts\bower_components\jquery\src\var\documentElement.js" />
+    <Content Include="Scripts\bower_components\jquery\src\var\hasOwn.js" />
+    <Content Include="Scripts\bower_components\jquery\src\var\indexOf.js" />
+    <Content Include="Scripts\bower_components\jquery\src\var\pnum.js" />
+    <Content Include="Scripts\bower_components\jquery\src\var\push.js" />
+    <Content Include="Scripts\bower_components\jquery\src\var\rcssNum.js" />
+    <Content Include="Scripts\bower_components\jquery\src\var\rnotwhite.js" />
+    <Content Include="Scripts\bower_components\jquery\src\var\slice.js" />
+    <Content Include="Scripts\bower_components\jquery\src\var\support.js" />
+    <Content Include="Scripts\bower_components\jquery\src\var\toString.js" />
+    <Content Include="Scripts\bower_components\jquery\src\wrap.js" />
+    <Content Include="Scripts\bower_components\kendo-ui\js\kendo.all.min.js" />
+    <Content Include="Scripts\bower_components\kendo-ui\styles\kendo.common.min.css" />
+    <Content Include="Scripts\bower_components\kendo-ui\styles\kendo.default.min.css" />
+    <Content Include="Scripts\bower_components\ng-notify\dist\ng-notify.min.css" />
+    <Content Include="Scripts\bower_components\ng-notify\dist\ng-notify.min.js" />
+    <Content Include="Scripts\bower_components\ng-notify\src\scripts\ng-notify.js" />
+    <Content Include="Scripts\bower_components\ng-notify\src\styles\ng-notify.css" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\CustomBill\Create.cshtml" />
+    <Content Include="Views\CustomBill\Delete.cshtml" />
+    <Content Include="Views\CustomBill\Details.cshtml" />
+    <Content Include="Views\CustomBill\Edit.cshtml" />
+    <Content Include="Views\CustomBill\Index.cshtml" />
+    <Content Include="Service References\Application Insights\ConnectedService.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1275</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1275/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.Agent.Intercept.0.17.0\build\Microsoft.ApplicationInsights.Agent.Intercept.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.Agent.Intercept.0.17.0\build\Microsoft.ApplicationInsights.Agent.Intercept.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.ApplicationInsights.Agent.Intercept.0.17.0\build\Microsoft.ApplicationInsights.Agent.Intercept.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.Agent.Intercept.0.17.0\build\Microsoft.ApplicationInsights.Agent.Intercept.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
