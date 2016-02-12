@@ -7,6 +7,7 @@
 
     $scope.loginLoading = false;
     $scope.createLoading = false;
+    $scope.forgotLoading = false;
     
     $scope.login = function () {
         $scope.loginLoading = true;
@@ -96,20 +97,23 @@
     }
 
     $scope.forgotPassword = function () {
+        $scope.forgotLoading = true;
         if ($scope.forgotValidator.validate()) {
             accountService.emailForgotPasswordToken($scope.forgotEmail, function (result) {
-                if (result)
+                if (result.status == "200")
                 {
                     helperService.notify("Reset informations were sent to your email.", "info");
                 }
                 else
                 {
-                    helperService.notifyError();
+                    helperService.notify("Provided email is not exist.", "error");
                 }
+                $scope.forgotLoading = false;
             });
         }
         else {
-             helperService.notifyError();
+            helperService.notifyError();
+            $scope.forgotLoading = false;
         }
     }
 });

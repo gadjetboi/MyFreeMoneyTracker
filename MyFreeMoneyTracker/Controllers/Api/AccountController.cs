@@ -466,6 +466,10 @@ namespace WifeBudgetSystem.Controllers.Api
         {
             ApplicationUser user = await UserManager.FindByEmailAsync(email);
 
+            if (user == null) {
+                return BadRequest();
+            }
+
             var code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
 
             code = HttpUtility.UrlEncode(code);
@@ -498,10 +502,10 @@ namespace WifeBudgetSystem.Controllers.Api
         [Route("ResetPassword")]
         public async Task<IHttpActionResult> ResetPassword(ResetPasswordModel model)
         {
-            if (model.UserId == null || model.Code == null || model.NewPassword == null)
+            if (!ModelState.IsValid)
             {
                 Elmah.ErrorLog.GetDefault(HttpContext.Current).Log(new Elmah.Error(new Exception(Resource.ErrorModel)));
-                return InternalServerError();
+                return BadRequest(ModelState);
             }
 
             IdentityResult result;

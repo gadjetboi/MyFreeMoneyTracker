@@ -27,7 +27,7 @@
             }).then(function (result) {
                 callback(result);
             }, function (result) {
-                me.notifyError();
+                callback(result);
             });
         },
 

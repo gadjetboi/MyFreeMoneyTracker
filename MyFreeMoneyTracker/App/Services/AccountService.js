@@ -80,10 +80,10 @@
             });
         },
 
-        resetPassword: function(userId, code, newPassword, callback) {
+        resetPassword: function(userId, code, newPassword, confirmNewPassword, callback) {
             var url = helperService.apiUrl() + '/Account/ResetPassword';
             var headers = { 'Content-Type': 'application/x-www-form-urlencoded' };
-            var data = { userId: userId, code: code, newPassword: newPassword };
+            var data = { userId: userId, code: code, newPassword: newPassword, confirmNewPassword: confirmNewPassword };
 
             helperService.postWithTransform(url, headers, data, function (result) {
                   callback(result);
