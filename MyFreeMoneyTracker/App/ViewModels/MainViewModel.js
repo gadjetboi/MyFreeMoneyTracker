@@ -1,5 +1,5 @@
 ﻿mainModule.controller("mainViewModel", function ($scope, helperService, $filter, accountService, $location, $window) {
-
+    
     if (!accountService.isUserLoggedIn())//TODO: Redirect before the HTML loaded.
     {
         $window.location.href = helperService.baseUrl() + '/';

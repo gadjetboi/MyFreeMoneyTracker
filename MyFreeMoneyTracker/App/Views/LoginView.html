@@ -1,66 +1,58 @@
-﻿<!-- Create Account -->
-<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="registerModalLabel">Create Account</h4>
-            </div>
-            <div class="modal-body">
-                <form kendo-validator="registerValidator">
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" ng-model="regEmail" class="form-control" required />
-                    </div>
-                    <div class="form-group">
-                        <label>Password</label>
-                        <input type="password" ng-model="regPassword" class="form-control" required />
-                    </div>
-                    <div class="form-group">
-                        <label>Confirm Password</label>
-                        <input type="password" ng-model="regConfirmPassword" class="form-control" required />
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" ng-click="register()" ng-show="!createLoading">Create Account</button>
-                <button type="button" class="btn btn-primary" ng-show="createLoading">
-                    <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate">
-                    </span> Loading...
-                </button>
-            </div>
-        </div>
+﻿<script type="text/ng-template" id="forgotPasswordModal.html">
+    <!-- Forgot Password -->
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="close()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="forgotPasswordModalLabel">Forgot Password</h4>
     </div>
-</div>
+    <div class="modal-body">
+        <form kendo-validator="forgotValidator">
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" ng-model="forgotEmail" class="form-control" required />
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="close()">Close</button>
+        <button type="button" class="btn btn-primary" ng-click="forgotPassword()" ng-show="!forgotLoading">Send</button>
+        <button type="button" class="btn btn-primary" ng-show="forgotLoading">
+            <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate">
+            </span> Loading...
+        </button>
+    </div>
+</script>
 
-<!-- Forgot Password -->
-<div class="modal fade" id="forgotPasswordModal" tabindex="-1" role="dialog" aria-labelledby="forgotPasswordModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="forgotPasswordModalLabel">Forgot Password</h4>
-            </div>
-            <div class="modal-body">
-                <form kendo-validator="forgotValidator">
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" ng-model="forgotEmail" class="form-control" required />
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" ng-click="forgotPassword()" ng-show="!forgotLoading">Send</button>
-                <button type="button" class="btn btn-primary" ng-show="forgotLoading">
-                    <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate">
-                    </span> Loading...
-                </button>
-            </div>
-        </div>
+<script type="text/ng-template" id="registrationModal.html">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="close()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="registerModalLabel">Create Account</h4>
     </div>
-</div>
+    <div class="modal-body">
+        <form kendo-validator="registerValidator">
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" ng-model="regEmail" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" ng-model="regPassword" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="password" ng-model="regConfirmPassword" class="form-control" required />
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="close()">Close</button>
+        <button type="button" class="btn btn-primary" ng-click="register()" ng-show="!createLoading">Create Account</button>
+        <button type="button" class="btn btn-primary" ng-show="createLoading">
+            <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate">
+            </span> Loading...
+        </button>
+    </div>
+
+</script>
 
 <div class="login-07">
     <div class="seventh-login">
@@ -89,11 +81,12 @@
         </form>
         <br />
         <div class="pull-left">
-            <a href="" data-toggle="modal" data-target="#registerModal">Create account</a>
+            <a href="" ng-click="openModal('registrationViewModel', 'registrationModal.html')">Create account</a>
         </div>
         <div class="pull-right">
-            <a href="" data-toggle="modal" data-target="#forgotPasswordModal">Forgot password</a>
+            <a href="" ng-click="openModal('forgotPasswordViewModel', 'forgotPasswordModal.html')">Forgot password</a>
         </div>
     </div>
-   
+
 </div>
+

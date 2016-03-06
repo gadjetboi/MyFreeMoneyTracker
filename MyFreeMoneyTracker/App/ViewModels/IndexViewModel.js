@@ -12,10 +12,4 @@
         $window.location.href = helperService.baseUrl() + '/';
     }
 
-    //Events
-    $scope.$on('loggedInEvent', function (event, args) {
-        if (!args.isLoggedIn)
-            $scope.userName = null;
-    });
-
 });
