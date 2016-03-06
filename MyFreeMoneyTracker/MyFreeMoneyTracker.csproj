@@ -613,7 +613,6 @@
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="Content\images\icons\manifest.json" />
     <Content Include="ApplicationInsights.config" />
-    <None Include="Properties\PublishProfiles\LocalPublish.pubxml" />
     <Content Include="Scripts\bower_components\angular-ui-switch\.bower.json" />
     <Content Include="Scripts\bower_components\angular-ui-switch\bower.json" />
     <Content Include="Scripts\bower_components\angular-ui-switch\Makefile" />
@@ -634,8 +633,6 @@
     <Content Include="Scripts\bower_components\angular-local-storage\LICENSE" />
     <Content Include="Scripts\bower_components\angular-local-storage\package.json" />
     <Content Include="Scripts\bower_components\angular-local-storage\README.md" />
-    <None Include="Properties\PublishProfiles\myfreemoneytracker.pubxml" />
-    <None Include="Properties\PublishProfiles\SomeePublish.pubxml" />
     <Content Include="Scripts\bower_components\angular-sanitize\.bower.json" />
     <Content Include="Scripts\bower_components\angular-sanitize\angular-sanitize.min.js.map" />
     <Content Include="Scripts\bower_components\angular-sanitize\bower.json" />
