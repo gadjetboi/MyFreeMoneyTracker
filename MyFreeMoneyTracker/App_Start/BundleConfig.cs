@@ -9,7 +9,8 @@ namespace WifeBudgetSystem
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/bower_components/jquery/dist/jquery.min.js"));
+                        "~/Scripts/bower_components/jquery/dist/jquery.min.js",
+                        "~/Scripts/script.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                         "~/Scripts/bower_components/angular/angular.min.js",
@@ -25,28 +26,26 @@ namespace WifeBudgetSystem
                         "~/Scripts/bower_components/angular-sanitize/angular-sanitize.min.js",
                         "~/Scripts/bower_components/ng-notify/dist/ng-notify.min.js"
                         ));
-
-            // Use the development version of Modernizr to develop with and learn from. Then, when you're
-            // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
-            bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/modernizr-*"));
-
+            
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bower_components/bootstrap/dist/js/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/bower_components/bootstrap/dist/js/bootstrap.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
+            bundles.Add(new StyleBundle("~/Styles/css").Include(
                       "~/Scripts/bower_components/bootstrap/dist/css/bootstrap.min.css",
                       "~/Scripts/bower_components/isteven-angular-multiselect/isteven-multi-select.css",
-                      "~/Content/bower_components/font-awesome/css/font-awesome.min.css",
+                      "~/Scripts/bower_components/font-awesome/css/font-awesome.min.css",
                       "~/Scripts/bower_components/kendo-ui/styles/kendo.common.min.css",
                       "~/Scripts/bower_components/kendo-ui/styles/kendo.default.min.css",
                       "~/Scripts/bower_components/angular-ui-switch/angular-ui-switch.min.css",
                       "~/Scripts/bower_components/ng-notify/dist/ng-notify.min.css",
-                      "~/Content/site.css"
+
+                      "~/Content/css/animate.css",
+                      "~/Content/css/form-elements.css",
+                      "~/Content/css/media-queries.css",
+                      "~/Content/css/site.css"
                       ));
 
-            //BundleTable.EnableOptimizations = false;
+            BundleTable.EnableOptimizations = false;
 
         }
     }

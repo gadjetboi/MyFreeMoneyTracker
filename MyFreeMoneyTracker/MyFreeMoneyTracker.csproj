@@ -291,12 +291,13 @@
     <Content Include="App\Views\LoginView.html" />
     <Content Include="App\Views\MainView.html" />
     <Content Include="App\Views\ResetPasswordView.html" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\bower_components\font-awesome\css\font-awesome.css" />
-    <Content Include="Content\bower_components\font-awesome\css\font-awesome.min.css" />
-    <Content Include="Content\bower_components\font-awesome\fonts\fontawesome-webfont.svg" />
-    <Content Include="Content\bower_components\font-awesome\HELP-US-OUT.txt" />
+    <Content Include="Scripts\bower_components\font-awesome\css\font-awesome.css" />
+    <Content Include="Scripts\bower_components\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Scripts\bower_components\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Scripts\bower_components\font-awesome\HELP-US-OUT.txt" />
+    <Content Include="Content\css\animate.css" />
+    <Content Include="Content\css\form-elements.css" />
+    <Content Include="Content\css\media-queries.css" />
     <Content Include="Content\Default\sprite.png" />
     <Content Include="Content\images\icons\android-chrome-144x144.png" />
     <Content Include="Content\images\icons\android-chrome-192x192.png" />
@@ -326,30 +327,9 @@
     <Content Include="Content\images\icons\mstile-310x310.png" />
     <Content Include="Content\images\icons\mstile-70x70.png" />
     <Content Include="Content\images\icons\safari-pinned-tab.svg" />
-    <Content Include="Content\loginForms\css\style.css" />
-    <Content Include="Content\loginForms\images\bg-7.jpg" />
-    <Content Include="Content\loginForms\images\bg10.jpg" />
-    <Content Include="Content\loginForms\images\bg8.jpg" />
-    <Content Include="Content\loginForms\images\bg9.jpg" />
-    <Content Include="Content\loginForms\images\bright.png" />
-    <Content Include="Content\loginForms\images\crossed.png" />
-    <Content Include="Content\loginForms\images\dark.png" />
-    <Content Include="Content\loginForms\images\icon10.png" />
-    <Content Include="Content\loginForms\images\icon3.png" />
-    <Content Include="Content\loginForms\images\icon6.png" />
-    <Content Include="Content\loginForms\images\icon9.png" />
-    <Content Include="Content\loginForms\images\icons.png" />
-    <Content Include="Content\loginForms\images\icons2.png" />
-    <Content Include="Content\loginForms\images\icons5.png" />
-    <Content Include="Content\loginForms\images\old.png" />
-    <Content Include="Content\loginForms\images\pool.png" />
-    <Content Include="Content\loginForms\images\red.jpg" />
-    <Content Include="Content\loginForms\images\star.png" />
-    <Content Include="Content\loginForms\images\tip1.png" />
-    <Content Include="Content\loginForms\images\tips.png" />
-    <Content Include="Content\loginForms\images\twit.png" />
-    <Content Include="Content\loginForms\images\xv.png" />
-    <Content Include="Content\toggle.css" />
+    <Content Include="Content\images\loading.gif" />
+    <Content Include="Content\images\logo%402x.png" />
+    <Content Include="Content\images\logo.png" />
     <Content Include="DatabaseSchema\MyFreeMoneyTrackerDb.sql" />
     <Content Include="DataContext\WifeBudgetSystemEntities.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -365,8 +345,6 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\bower_components\angular-bootstrap\index.js" />
     <Content Include="Scripts\bower_components\angular-bootstrap\ui-bootstrap-csp.css" />
     <Content Include="Scripts\bower_components\angular-bootstrap\ui-bootstrap-tpls.js" />
@@ -570,42 +548,42 @@
     <Content Include="DataContext\WifeBudgetSystemEntities.edmx.diagram">
       <DependentUpon>WifeBudgetSystemEntities.edmx</DependentUpon>
     </Content>
-    <Content Include="Content\bower_components\font-awesome\.bower.json" />
-    <Content Include="Content\bower_components\font-awesome\.gitignore" />
-    <Content Include="Content\bower_components\font-awesome\.npmignore" />
-    <Content Include="Content\bower_components\font-awesome\bower.json" />
-    <Content Include="Content\bower_components\font-awesome\css\font-awesome.css.map" />
-    <Content Include="Content\bower_components\font-awesome\fonts\fontawesome-webfont.eot" />
-    <Content Include="Content\bower_components\font-awesome\fonts\fontawesome-webfont.ttf" />
-    <Content Include="Content\bower_components\font-awesome\fonts\fontawesome-webfont.woff" />
-    <Content Include="Content\bower_components\font-awesome\fonts\fontawesome-webfont.woff2" />
-    <Content Include="Content\bower_components\font-awesome\fonts\FontAwesome.otf" />
-    <Content Include="Content\bower_components\font-awesome\less\animated.less" />
-    <Content Include="Content\bower_components\font-awesome\less\bordered-pulled.less" />
-    <Content Include="Content\bower_components\font-awesome\less\core.less" />
-    <Content Include="Content\bower_components\font-awesome\less\fixed-width.less" />
-    <Content Include="Content\bower_components\font-awesome\less\font-awesome.less" />
-    <Content Include="Content\bower_components\font-awesome\less\icons.less" />
-    <Content Include="Content\bower_components\font-awesome\less\larger.less" />
-    <Content Include="Content\bower_components\font-awesome\less\list.less" />
-    <Content Include="Content\bower_components\font-awesome\less\mixins.less" />
-    <Content Include="Content\bower_components\font-awesome\less\path.less" />
-    <Content Include="Content\bower_components\font-awesome\less\rotated-flipped.less" />
-    <Content Include="Content\bower_components\font-awesome\less\stacked.less" />
-    <Content Include="Content\bower_components\font-awesome\less\variables.less" />
-    <Content Include="Content\bower_components\font-awesome\scss\font-awesome.scss" />
-    <Content Include="Content\bower_components\font-awesome\scss\_animated.scss" />
-    <Content Include="Content\bower_components\font-awesome\scss\_bordered-pulled.scss" />
-    <Content Include="Content\bower_components\font-awesome\scss\_core.scss" />
-    <Content Include="Content\bower_components\font-awesome\scss\_fixed-width.scss" />
-    <Content Include="Content\bower_components\font-awesome\scss\_icons.scss" />
-    <Content Include="Content\bower_components\font-awesome\scss\_larger.scss" />
-    <Content Include="Content\bower_components\font-awesome\scss\_list.scss" />
-    <Content Include="Content\bower_components\font-awesome\scss\_mixins.scss" />
-    <Content Include="Content\bower_components\font-awesome\scss\_path.scss" />
-    <Content Include="Content\bower_components\font-awesome\scss\_rotated-flipped.scss" />
-    <Content Include="Content\bower_components\font-awesome\scss\_stacked.scss" />
-    <Content Include="Content\bower_components\font-awesome\scss\_variables.scss" />
+    <Content Include="Scripts\bower_components\font-awesome\.bower.json" />
+    <Content Include="Scripts\bower_components\font-awesome\.gitignore" />
+    <Content Include="Scripts\bower_components\font-awesome\.npmignore" />
+    <Content Include="Scripts\bower_components\font-awesome\bower.json" />
+    <Content Include="Scripts\bower_components\font-awesome\css\font-awesome.css.map" />
+    <Content Include="Scripts\bower_components\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Scripts\bower_components\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Scripts\bower_components\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Scripts\bower_components\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Scripts\bower_components\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Scripts\bower_components\font-awesome\less\animated.less" />
+    <Content Include="Scripts\bower_components\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Scripts\bower_components\font-awesome\less\core.less" />
+    <Content Include="Scripts\bower_components\font-awesome\less\fixed-width.less" />
+    <Content Include="Scripts\bower_components\font-awesome\less\font-awesome.less" />
+    <Content Include="Scripts\bower_components\font-awesome\less\icons.less" />
+    <Content Include="Scripts\bower_components\font-awesome\less\larger.less" />
+    <Content Include="Scripts\bower_components\font-awesome\less\list.less" />
+    <Content Include="Scripts\bower_components\font-awesome\less\mixins.less" />
+    <Content Include="Scripts\bower_components\font-awesome\less\path.less" />
+    <Content Include="Scripts\bower_components\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Scripts\bower_components\font-awesome\less\stacked.less" />
+    <Content Include="Scripts\bower_components\font-awesome\less\variables.less" />
+    <Content Include="Scripts\bower_components\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Scripts\bower_components\font-awesome\scss\_animated.scss" />
+    <Content Include="Scripts\bower_components\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Scripts\bower_components\font-awesome\scss\_core.scss" />
+    <Content Include="Scripts\bower_components\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Scripts\bower_components\font-awesome\scss\_icons.scss" />
+    <Content Include="Scripts\bower_components\font-awesome\scss\_larger.scss" />
+    <Content Include="Scripts\bower_components\font-awesome\scss\_list.scss" />
+    <Content Include="Scripts\bower_components\font-awesome\scss\_mixins.scss" />
+    <Content Include="Scripts\bower_components\font-awesome\scss\_path.scss" />
+    <Content Include="Scripts\bower_components\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Scripts\bower_components\font-awesome\scss\_stacked.scss" />
+    <Content Include="Scripts\bower_components\font-awesome\scss\_variables.scss" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.woff" />
@@ -647,7 +625,6 @@
     <Content Include="Scripts\bower_components\ng-notify\README.md" />
     <Content Include="Scripts\bower_components\ng-notify\src\styles\ng-notify.css.map" />
     <Content Include="Scripts\bower_components\ng-notify\src\styles\ng-notify.sass" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bower_components\isteven-angular-multiselect\isteven-multi-select.css" />
     <Content Include="Scripts\bower_components\isteven-angular-multiselect\isteven-multi-select.js" />
     <Content Include="Scripts\bower_components\isteven-angular-multiselect\LICENSE.txt" />
@@ -767,16 +744,7 @@
     <Content Include="Scripts\bower_components\ng-notify\dist\ng-notify.min.js" />
     <Content Include="Scripts\bower_components\ng-notify\src\scripts\ng-notify.js" />
     <Content Include="Scripts\bower_components\ng-notify\src\styles\ng-notify.css" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\script.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -786,22 +754,17 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Content\Site.css" />
-    <Content Include="Scripts\_references.js" />
+    <Content Include="Content\css\site.css" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\CustomBill\Create.cshtml" />
-    <Content Include="Views\CustomBill\Delete.cshtml" />
-    <Content Include="Views\CustomBill\Details.cshtml" />
-    <Content Include="Views\CustomBill\Edit.cshtml" />
-    <Content Include="Views\CustomBill\Index.cshtml" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Home\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -809,7 +772,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <None Include="Properties\PublishProfiles\myfreemoneytracker.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -13,12 +13,12 @@
         </form>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-default" ng-click="close()">Close</button>
-        <button type="button" class="btn btn-primary" ng-click="forgotPassword()" ng-show="!forgotLoading">Send</button>
-        <button type="button" class="btn btn-primary" ng-show="forgotLoading">
+        <a class="btn btn-link-1" href="" ng-click="close()"><i class="fa fa-close"></i> Close</a>
+        <a class="btn btn-link-1" href="" ng-click="forgotPassword()" ng-show="!forgotLoading"><i class="fa fa-mail-forward"></i> Send</a>
+        <a class="btn btn-link-1" href="" ng-show="forgotLoading">
             <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate">
             </span> Loading...
-        </button>
+        </a>
     </div>
 </script>
 
@@ -44,49 +44,41 @@
         </form>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-default" ng-click="close()">Close</button>
-        <button type="button" class="btn btn-primary" ng-click="register()" ng-show="!createLoading">Create Account</button>
-        <button type="button" class="btn btn-primary" ng-show="createLoading">
+        <a class="btn btn-link-1" href="" ng-click="close()"><i class="fa fa-close"></i> Close</a>
+        <a class="btn btn-link-1" href="" ng-click="register()" ng-show="!createLoading">
+            <i class="fa fa-pencil-square-o"></i> Create Account
+        </a>
+        <a class="btn btn-link-1" href="" ng-show="createLoading">
             <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate">
             </span> Loading...
-        </button>
+        </a>
     </div>
 
 </script>
 
-<div class="login-07">
-    <div class="seventh-login">
-        <h3>LOGIN FORM</h3>
-        <form class="seven" kendo-validator="validator">
-            <ul>
-                <li>
-                    <input type="text" k-textbox ng-model="email" placeholder="EMAIL ADDRESS" required />
-                    <a href="#" class="icon8 star"> </a>
-                    <div class="clear"> </div>
-                </li>
-                <li>
-                    <input type="password" k-textbox ng-model="password" placeholder="PASSWORD" required />
-                    <a href="#" class="icon8 star"> </a>
-                    <div class="clear"> </div>
-                </li>
-            </ul>
-            <br />
-            <button type="submit" ng-click="login()" class="btn btn-lg btn-info" ng-show="!loginLoading">
-                <span>LOG IN</span>
-            </button>
-            <button class="btn btn-lg btn-info" ng-show="loginLoading">
-                <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate">
-                </span> Loading...
-            </button>
+<div class="login-container">
+    <h3>Sign In</h3>
+    <div class="loginForm">
+        <form role="form" kendo-validator="validator">
+            <div class="form-group">
+                <input type="text" required k-textbox ng-model="email" name="email" placeholder="Enter your email..." class="login-email form-control" id="login-email">
+            </div>
+            <div class="form-group">
+                <label class="sr-only" for="login-password">Passwod</label>
+                <input type="password" required k-textbox ng-model="password" name="password" placeholder="Enter Password" class="login-password form-control" id="login-password">
+            </div>
+            <div class="form-group">
+                <a class="btn btn-link-1" href="" ng-click="login()" ng-show="!loginLoading"><i class="fa fa-sign-in"></i> Login</a>
+                <a class="btn btn-link-1" href="" ng-click="login()"  ng-show="loginLoading"><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate">
+</span> Loading...</a>
+            </div>
+            <div class="pull-left">
+                <a href="" ng-click="openModal('registrationViewModel', 'registrationModal.html')">Create account</a>
+            </div>
+            <div class="pull-right">
+                <a href="" ng-click="openModal('forgotPasswordViewModel', 'forgotPasswordModal.html')">Forgot password</a>
+            </div>
         </form>
-        <br />
-        <div class="pull-left">
-            <a href="" ng-click="openModal('registrationViewModel', 'registrationModal.html')">Create account</a>
-        </div>
-        <div class="pull-right">
-            <a href="" ng-click="openModal('forgotPasswordViewModel', 'forgotPasswordModal.html')">Forgot password</a>
-        </div>
+        
     </div>
-
 </div>
-

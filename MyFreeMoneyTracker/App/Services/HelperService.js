@@ -5,8 +5,8 @@
         baseUrl: function () {
             var me = this;
 
-            //return 'http://' + $location.host() + ':1275';
-            return 'http://' + $location.host();
+            return 'http://' + $location.host() + ':1275';
+            //return 'http://' + $location.host();
         },
 
         apiUrl: function () {
