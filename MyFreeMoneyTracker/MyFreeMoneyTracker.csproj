@@ -291,6 +291,13 @@
     <Content Include="App\Views\LoginView.html" />
     <Content Include="App\Views\MainView.html" />
     <Content Include="App\Views\ResetPasswordView.html" />
+    <Content Include="Content\images\readme\add-bill.jpg" />
+    <Content Include="Content\images\readme\bill-detail.jpg" />
+    <Content Include="Content\images\readme\bill-list.jpg" />
+    <Content Include="Content\images\readme\change-password.jpg" />
+    <Content Include="Content\images\readme\create-account.jpg" />
+    <Content Include="Content\images\readme\forgot-password.jpg" />
+    <Content Include="Content\images\readme\signin.jpg" />
     <Content Include="Scripts\bower_components\font-awesome\css\font-awesome.css" />
     <Content Include="Scripts\bower_components\font-awesome\css\font-awesome.min.css" />
     <Content Include="Scripts\bower_components\font-awesome\fonts\fontawesome-webfont.svg" />
